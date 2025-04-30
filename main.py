@@ -13,6 +13,8 @@ def strings_to_puzzle_horizontal(strings):
         for letter in row.strip("\n"):
             tube_layers.append(letter)
         tubes.append(Tube(tube_layers))
+    # for i, tube in enumerate(tubes):
+    #     print("tube {}: {}".format(i +1, tube))
     return Puzzle(tubes)
 
 def strings_to_puzzle_vertical(strings):
@@ -38,8 +40,9 @@ def main():
     puzzle = strings_to_puzzle_vertical(lines) if args.vertical else strings_to_puzzle_horizontal(lines)
     solution = PuzzleSolver(puzzle).solve()
     if solution:
-        for move in solution:
-            print(move)
+        print("\nFound a solution with {} steps to the puzzle!".format(len(solution)))
+        for i, move in enumerate(solution):
+            print("Step {}: {}".format(i + 1, move))
     else:
         print("Couldn't solve")
 

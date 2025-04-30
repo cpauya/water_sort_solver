@@ -33,3 +33,21 @@ The following puzzle can be represented by both horizontal and vertical input fi
 `vertical_example.txt` is an example of a vertical input file
 
 `horizontal_example.txt` is an example of a horizontal input file
+
+
+## Legends
+
+Color legends to use in the input files.
+
+- A == 1 == Gray
+- B == 2 == Magenta / Violet / Purple
+- C == 3 == Light Blue
+- D == 4 == Pink
+- E == 5 == Green
+- F == 6 == Blue
+- G == 7 == Orange
+- H == 8 == Red
+- I == 9 == Cyan
+- J == Yellow
+- K == Light green
+- L == Brown
