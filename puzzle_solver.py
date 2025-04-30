@@ -30,16 +30,17 @@ class PuzzleSolver:
                     test_solution = deepcopy(solution)
                     test_puzzle.move(move)
                     test_solution.append(move)
-                    msg = "Try move: {} (total moves: {})".format(move, len(solution) + 1)
-                    PuzzleSolver.print_msg(msg)
+                    if __debug__:
+                        msg = "Try move: {} (total moves: {})".format(move, len(solution) + 1)
+                        PuzzleSolver.print_msg(msg)
                     returned_solution = PuzzleSolver.static_solve(test_puzzle, test_solution)
                     if returned_solution is not None:
                         return returned_solution
                     # Dead end, try next possible move
-                    msg = "==> Dead-end for move: {}, try next possible move...".format(move)
-                    PuzzleSolver.print_msg(msg)
+                    if __debug__:
+                        msg = "==> Dead-end for move: {} - trying next possible move...".format(move)
+                        PuzzleSolver.print_msg(msg)
             except MovesExpendedException:
-                # PuzzleSolver.print_msg("MovesExpendedException error!")
                 break
         return None
 
@@ -68,7 +69,6 @@ class PuzzleSolver:
                         return move
                 else:
                     return move
-                
 
     @staticmethod
     def print_msg(msg):

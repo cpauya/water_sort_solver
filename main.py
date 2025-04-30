@@ -13,8 +13,6 @@ def strings_to_puzzle_horizontal(strings):
         for letter in row.strip("\n"):
             tube_layers.append(letter)
         tubes.append(Tube(tube_layers))
-    # for i, tube in enumerate(tubes):
-    #     print("tube {}: {}".format(i +1, tube))
     return Puzzle(tubes)
 
 def strings_to_puzzle_vertical(strings):
